@@ -1,7 +1,7 @@
 name: Context checking
 on: pull_request
   branches:
-    - master
+    - main
 
 jobs:
   conn_execute:
