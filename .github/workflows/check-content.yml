@@ -1,0 +1,11 @@
+name: Context checking
+on: pull_request
+  branches:
+    - master
+
+jobs:
+  conn_execute:
+    # check if there is a Conn.Execute in the pull request
+    if: github.event_name == 'pull_request' && contains(fromJson('["Conn.Execute"]'), github.event.action)
+    run : |
+      echo "Requêtes à  paramétrer."
