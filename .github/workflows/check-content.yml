@@ -3,7 +3,8 @@ on: pull_request
 
 jobs:
   conn_execute:
-    # check if there is a Conn.Execute in the pull request
-    if: github.event_name == 'pull_request' && contains(fromJson('["Conn.Execute"]'), github.event.action)
-    run : |
-      echo "Requêtes à  paramétrer."
+    runs-on: ubuntu-latest
+    if:  github.event_name == 'pull_request' && contains(fromJson('["Conn.Execute"]'), github.event.action)
+    steps:
+      - name: Paramétrer les requêtes
+        run: echo "Requêtes à  paramétrer."
