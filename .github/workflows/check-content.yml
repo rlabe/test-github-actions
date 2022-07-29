@@ -3,7 +3,6 @@ on: pull_request
 
 jobs:
   conn_execute:
-    runs-on: ubuntu-latest
     if:  github.event_name == 'pull_request' && contains(fromJson('["Conn.Execute"]'), github.event.action)
     steps:
       - name: Paramétrer les requêtes
