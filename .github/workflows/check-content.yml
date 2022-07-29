@@ -4,7 +4,7 @@ on: pull_request
 jobs:
   conn_execute:
     runs-on: ubuntu-latest
-    if:  github.event_name == 'pull_request' && contains(fromJson('["Conn.Execute"]'), github.event.action)
+    if: github.event_name == 'pull_request' && contains(fromJson('["salut"]'), github.event.action)
     steps:
       - name: Paramétrer les requêtes
-        run: echo "Requêtes à  paramétrer."
+        message: "Il faut paramétrer !"
